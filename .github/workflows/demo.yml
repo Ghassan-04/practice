@@ -41,7 +41,7 @@ jobs:
         id: publish
         run: find dist/assets/*.jss -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: upload artifacts 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist-files
           path: dist
@@ -53,7 +53,7 @@ jobs:
       - name: Deploy
         run: echo "Deploying..."
       - name: dowload artifacts
-        uses: actions/dowload-artifact@v3
+        uses: actions/dowload-artifact@v4
         with:
          name: dist-files
       - name: output file name 
